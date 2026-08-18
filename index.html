@@ -1,313 +1,387 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <title>Cristian Trifan • Senior React Developer • Contractor • Freelancer • I help companies implement secure and fast web applications</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Cristian Trifan • Senior React Developer • Contractor • Freelancer • I help companies implement secure and fast web applications" />
-    <meta name="keywords" content="React.js,Frontend developer,Senior React developer" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cristian Trifan — Full-stack engineer, agentic workflows</title>
+    <meta name="description" content="Cristian Trifan is a senior full-stack engineer with two decades of production experience in TypeScript, React, Next.js and Node.js, building daily with agentic workflows. Remote contract work across the EU." />
     <meta name="author" content="Cristian Trifan" />
+    <link rel="canonical" href="https://cristian-trifan.dev/" />
+    <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e1117" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Cristian Trifan — Full-stack engineer, agentic workflows" />
+    <meta property="og:description" content="Two decades of production software. TypeScript, React, Next.js, Node.js — built daily with agents in the loop." />
+    <meta property="og:url" content="https://cristian-trifan.dev/" />
+    <meta property="og:image" content="https://cristian-trifan.dev/img/me-ai-1400.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="icon" type="image/jpeg" href="favicon.jpeg" />
+    <link rel="preload" as="image" href="img/me-ai-1400.webp" imagesrcset="img/me-ai-800.webp 800w, img/me-ai-1400.webp 1400w" imagesizes="(max-width: 900px) 92vw, 46vw" />
+    <link rel="preload" as="font" type="font/woff2" href="css/fonts/instrument-sans-400-700-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="css/fonts/ibm-plex-mono-400-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="css/site.css" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY0J7PPBHX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-SY0J7PPBHX');
+      // Runs before first paint: no flash of the wrong palette, and .reveal only
+      // hides itself when JS is actually available to reveal it again.
+      (function () {
+        var root = document.documentElement;
+        root.classList.add('js');
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+        } catch (e) {}
+      })();
     </script>
-    <!-- /Google tag (gtag.js) -->
 
-    <link rel="stylesheet" href="css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-
-    <script src="js/modernizr.custom.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Cristian Trifan",
+        "url": "https://cristian-trifan.dev/",
+        "image": "https://cristian-trifan.dev/img/me-ai-1400.jpg",
+        "jobTitle": "Senior Full-Stack Engineer",
+        "email": "mailto:contact@cristian-trifan.dev",
+        "address": { "@type": "PostalAddress", "addressLocality": "Calpe", "addressCountry": "ES" },
+        "sameAs": [
+          "https://www.linkedin.com/in/crissdev",
+          "https://github.com/crissdev",
+          "https://learn.frontend-mastery.community/"
+        ],
+        "knowsAbout": [
+          "TypeScript", "React", "Next.js", "Node.js", "Frontend architecture",
+          "Agentic workflows", "OpenAI Codex", "Model Context Protocol"
+        ]
+      }
+    </script>
   </head>
 
-  <body class="page">
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="lm-animated-bg"></div>
-    
-    <!-- Loading animation -->
-    <div class="preloader">
-      <div class="preloader-animation">
-        <div class="preloader-spinner">
-        </div>
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <a class="wordmark" href="/">
+          <span class="wordmark-mark">CT</span>
+          <span class="wordmark-name">Cristian Trifan</span>
+        </a>
+
+        <nav class="nav" aria-label="Sections">
+          <a href="#approach">Approach</a>
+          <a href="#work">Work</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2.6v2.6M12 18.8v2.6M2.6 12h2.6M18.8 12h2.6M5.4 5.4l1.9 1.9M16.7 16.7l1.9 1.9M18.6 5.4l-1.9 1.9M7.3 16.7l-1.9 1.9" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z" />
+          </svg>
+        </button>
       </div>
-    </div>
-    <!-- /Loading animation -->
+    </header>
 
-    <!-- Scroll To Top Button -->
-    <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
-    <!-- /Scroll To Top Button -->
+    <main id="main">
+      <!-- Hero -->
+      <section class="section section-hero">
+        <div class="wrap hero">
+          <div class="hero-text reveal">
+            <p class="eyebrow eyebrow-status">
+              <span class="status-dot" aria-hidden="true"></span>
+              Selectively taking new engagements
+            </p>
 
-    <div class="page-scroll">
-      <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+            <h1 class="hero-title">Full-stack engineering,<br /><em>with agents in the loop.</em></h1>
 
-        <!-- Header -->
-        <header id="site_header" class="header">
-          <div class="header-content clearfix">
-                
-            <!-- Text Logo -->
-            <div class="text-logo">
-              <a href="index.html">
-                <div class="logo-symbol">C</div>
-                <div class="logo-text">Cristian <span>Trifan</span></div>
+            <p class="lede">
+              I'm Cristian Trifan. Two decades of production software — from .NET back ends and
+              payment systems to React platforms and frontend architecture for security and fintech
+              products. Today I work with OpenAI Codex every day, and build my own learning platform,
+              <a href="https://learn.frontend-mastery.community/" target="_blank" rel="noopener">Frontend Mastery</a>,
+              the same way.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button" href="mailto:contact@cristian-trifan.dev">
+                contact@cristian-trifan.dev
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h13M13 6.5 18.5 12 13 17.5" /></svg>
               </a>
+              <a class="link-quiet" href="https://www.linkedin.com/in/crissdev" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="link-quiet" href="https://github.com/crissdev" target="_blank" rel="noopener">GitHub</a>
             </div>
-            <!-- /Text Logo -->
 
-            <!-- Navigation -->
-            <div class="site-nav mobile-menu-hide">
-              <ul class="leven-classic-menu site-main-menu">
-                <li class="menu-item">
-                  <a href="https://linkedin.com/in/crissdev">LinkedIn Profile</a>
-                </li>
+            <p class="hero-place">Calpe, Spain — remote across the EU</p>
+          </div>
 
-                <li class="menu-item">
-                  <a href="https://github.com/crissdev">Portfolio</a>
-                </li>
+          <figure class="hero-figure reveal">
+            <picture>
+              <source
+                type="image/webp"
+                srcset="img/me-ai-800.webp 800w, img/me-ai-1400.webp 1400w"
+                sizes="(max-width: 900px) 92vw, 46vw"
+              />
+              <img
+                src="img/me-ai-1400.jpg"
+                width="1448"
+                height="1086"
+                alt="Cristian Trifan, with a React component, a system architecture diagram and an AI workflow rendered behind him."
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </figure>
+        </div>
+
+        <div class="wrap">
+          <ul class="stack-strip" aria-label="Core stack">
+            <li>Since 2005</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Node.js</li>
+            <li>Testing &amp; CI/CD</li>
+            <li>Stripe</li>
+            <li>OpenAI Codex</li>
+            <li>MCP</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Approach -->
+      <section class="section section-approach" id="approach" aria-labelledby="approach-title">
+        <div class="wrap">
+          <p class="eyebrow">Approach</p>
+          <h2 class="section-title" id="approach-title">
+            Agents write more of the code every month. Deciding what's worth writing is still the job.
+          </h2>
+          <p class="section-lede">
+            I've worked in agentic workflows daily since they became genuinely useful — OpenAI Codex
+            as the driver, MCP servers for context, agent skills for the parts that repeat. It changed
+            how much ground I cover in a week. It didn't change who is accountable for what ships.
+          </p>
+
+          <div class="split reveal">
+            <div class="split-agent">
+              <p class="split-label">The agent handles</p>
+              <ul class="agent-list">
+                <li>first-pass implementations</li>
+                <li>refactors spanning dozens of files</li>
+                <li>test scaffolding and fixtures</li>
+                <li>migrations and dependency bumps</li>
+                <li>wiring, boilerplate, glue code</li>
+                <li>the second, third and fourth attempt</li>
               </ul>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <a class="menu-toggle mobile-visible">
-              <i class="fa fa-bars"></i>
-            </a>
-            <!-- Mobile Menu Toggle -->
-          </div>
-        </header>
-        <!-- /Header -->
-
-        <div id="main" class="site-main">
-          <div id="main-content" class="single-page-content">
-            <div id="primary" class="content-area">    
-              <div id="content" class="page-content site-content single-post" role="main">
-                <!-- Home Page Top Part -->
-                <div class="row">
-                  <div class=" col-xs-12 col-sm-12">
-                    <div class="home-content">
-                      <div class="row flex-v-align">
-                        
-                        <div class="col-sm-12 col-md-5 col-lg-5">
-                          <div class="home-photo">
-                            <div class="hp-inner" style="background-image: url(img/main_photo_800.png);">
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-12 col-md-7 col-lg-7">
-                          <div class="home-text hp-left">
-                            <div class="owl-carousel text-rotation">                                    
-                              <div class="item">
-                                <h4>Senior Frontend Developer</h4>
-                              </div>
-
-                              <div class="item">
-                                <h4>Senior React Developer</h4>
-                              </div>
-
-                              <div class="item">
-                                <h4>Freelancer / Contractor</h4>
-                              </div>
-
-                              <div class="item">
-                                <h4>Frontend Architect</h4>
-                              </div>
-                            </div>
-                              
-                            <h1>Cristian Trifan</h1>
-                            <p>I am a Senior React Developer / Contractor / Freelancer with <strong>20+ years of
-                              experience</strong>. I use my passion, experience and skills to design and implement top-of-the-line software solutions for businesses worldwide.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Home Page Top Part -->
-
-                <!-- Services -->
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="p-50"></div>
-
-                    <div class="block-title">
-                      <h2>What I Do</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="info-list-w-icon">
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="linecons linecons-display"></i>
-                        </div>
-      
-                        <div class="ci-text">
-                          <h4>Frontend Development</h4>
-                          <p>Frontend development using React and TypeScript involves building the user interface of a web application using the React JavaScript library and TypeScript programming language.</p>
-                        </div>
-                      </div>
-    
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="linecons linecons-star"></i>
-                        </div>
-
-                        <div class="ci-text">
-                          <h4>Code Quality</h4>
-                          <p>Code quality is a critical aspect of frontend development as it directly impacts the performance and user experience of a website or application. By utilizing best practices and utilizing tools such as code linting, testing, and code reviews, developers can ensure that their code is clean, maintainable, efficient, and free of errors.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="info-list-w-icon">
-
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="linecons linecons-lock"></i>
-                        </div>
-
-                        <div class="ci-text">
-                          <h4>Website Security</h4>
-                          <p>Website security is the protection of a website and its users from cyber threats through measures such as encryption, software updates, and firewall. It helps to maintain user trust and protect sensitive information.</p>
-                        </div>
-                      </div>
-
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="linecons linecons-user"></i>
-                        </div>
-
-                        <div class="ci-text">
-                          <h4>Coaching &amp; Mentoring</h4>
-                          <p>Coaching and mentoring in software programming are methods to improve your skills and achieve goals with the help of a trained coach or mentor. They provide guidance, feedback, and support to help you become a better software developer.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /Services -->
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="p-20"></div>
-
-                    <!-- Clients Slider -->
-                    <div class="block-title">
-                      <h2>Clients</h2>
-                    </div>
-
-                    <div class="clients owl-carousel" data-mobile-items="1" data-tablet-items="3" data-items="6">
-                      <div class="client-block">
-                        <a href="https://www.parloa.com" target="_blank" title="Parloa" rel="noopener noreferrer">
-                          <img src="img/clients/parloa.svg" alt="Parloa">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="https://www.wayfair.com" target="_blank" title="Wayfair" rel="noopener noreferrer">
-                          <img src="img/clients/wayfair.jpeg" alt="Wayfair">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="https://www.acunetix.com" target="_blank" title="Acunetix" rel="noopener noreferrer">
-                          <img src="img/clients/acunetix.jpeg" alt="Acunetix">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="https://www.equalexperts.com" target="_blank" title="Equal Experts" rel="noopener noreferrer">
-                          <img src="img/clients/equal-experts.jpeg" alt="Equal Experts">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="https://www.accesa.eu" target="_blank" title="Accesa">
-                          <img src="img/clients/accesa.jpeg" alt="Accesa">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="https://essensys.ro" target="_blank" title="Essensys" rel="noopener noreferrer">
-                          <img src="img/clients/essensys.jpeg" alt="Essensys">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="https://zenitech.co.uk" target="_blank" title="Zenitech" rel="noopener noreferrer">
-                          <img src="img/clients/zenitech.jpeg" alt="Zenitech">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a href="https://mmc.ro" target="_blank" title="M&M Computers" rel="noopener noreferrer">
-                          <img src="img/clients/mmc.png" alt="M&M Computers" style="margin-top: 25px">
-                        </a>
-                      </div>
-
-                      <div class="client-block">
-                        <a target="_blank" title="Ager Solutions" rel="noopener noreferrer">
-                          <img src="img/clients/ager-solutions.png" alt="Ager Solutions" style="margin-top: 10px">
-                        </a>
-                      </div>
-                    </div>
-                    <!-- /Clients Slider -->
-
-                  </div>
-                </div>
-              </div>
+            <div class="split-human">
+              <p class="split-label split-label-mine">I stay on</p>
+              <ul class="human-list">
+                <li>The architecture — and the constraints the agent works inside.</li>
+                <li>What <em>done</em> actually means for this feature.</li>
+                <li>The review. Every diff, before it lands.</li>
+                <li>The trade-offs I'd still defend in six months.</li>
+              </ul>
             </div>
+
+            <p class="split-note">
+              More surface covered per week, against the same bar for what reaches production.
+            </p>
           </div>
         </div>
+      </section>
 
-        <!-- Footer -->
-        <footer class="site-footer clearfix">
-          <div class="footer-social">
-            <ul class="footer-social-links">
-              <li>
-                <a href="https://linkedin.com/in/crissdev">LinkedIn</a>
-              </li>
+      <!-- Work -->
+      <section class="section section-work" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="section-title" id="work-title">What I've built</h2>
 
-              <li>
-                <a href="https://github.com/crissdev">GitHub</a>
-              </li>
+          <article class="card card-featured reveal">
+            <div class="card-meta">
+              <span class="card-years">2024 — present</span>
+              <span class="card-tag">Own product</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://learn.frontend-mastery.community/" target="_blank" rel="noopener">
+                Frontend Mastery
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 16 16 8M9.5 8H16v6.5" /></svg>
+              </a>
+            </h3>
+            <p class="card-role">Senior full-stack engineer — founder</p>
+            <p class="card-context">
+              A learning platform where frontend developers solve UI challenges in an embedded editor
+              with live preview, publish their solutions, and build a public profile.
+            </p>
+            <ul class="card-points">
+              <li>Built the architecture and every core system: editor, live preview, profiles, solutions, AI-powered feedback.</li>
+              <li>Implemented PRO memberships end to end — Stripe subscriptions, billing, and plan changes.</li>
+              <li>Evolve it daily with OpenAI Codex; most of my agentic practice comes from this codebase.</li>
             </ul>
-          </div>
+            <ul class="card-stack">
+              <li>Next.js</li><li>TypeScript</li><li>React</li><li>Node.js</li><li>Stripe</li><li>Codex</li>
+            </ul>
+          </article>
 
-          <div class="footer-copyrights">
-            <p>Cristian Trifan © 2026 All Rights Reserved</p>
-          </div>
-        </footer>
-        <!-- /Footer -->
+          <div class="card-grid">
+            <article class="card reveal">
+              <div class="card-meta">
+                <span class="card-years">2024</span>
+              </div>
+              <h3 class="card-title">
+                <a href="https://www.parloa.com" target="_blank" rel="noopener">
+                  Parloa
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 16 16 8M9.5 8H16v6.5" /></svg>
+                </a>
+              </h3>
+              <p class="card-role">Senior React developer</p>
+              <p class="card-context">
+                Voice and AI workflow platform — provider integrations and the analytics surface.
+              </p>
+              <ul class="card-points">
+                <li>Added ElevenLabs as a text-to-speech provider, and surfaced orchestrator errors in the UI so failures became diagnosable.</li>
+                <li>Integrated Preset.io into the analytics dashboard with authenticated embedding.</li>
+                <li>Expanded end-to-end coverage and moved the UI onto the in-house component library.</li>
+              </ul>
+              <ul class="card-stack">
+                <li>React</li><li>TypeScript</li><li>E2E testing</li>
+              </ul>
+            </article>
 
+            <article class="card reveal">
+              <div class="card-meta">
+                <span class="card-years">2021 — 2023</span>
+              </div>
+              <h3 class="card-title">
+                <a href="https://www.wayfair.com" target="_blank" rel="noopener">
+                  Wayfair
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 16 16 8M9.5 8H16v6.5" /></svg>
+                </a>
+              </h3>
+              <p class="card-role">Senior React developer</p>
+              <p class="card-context">
+                Internal platform for EU shipping rate cards — pricing workflows and shipment cost
+                estimation across regions.
+              </p>
+              <ul class="card-points">
+                <li>Built the React platform for creating and managing rate cards.</li>
+                <li>Introduced unit and e2e testing plus CI/CD improvements, cutting regressions and raising release confidence.</li>
+              </ul>
+              <ul class="card-stack">
+                <li>React</li><li>TypeScript</li><li>CI/CD</li>
+              </ul>
+            </article>
+
+            <article class="card reveal">
+              <div class="card-meta">
+                <span class="card-years">2011 — 2017</span>
+              </div>
+              <h3 class="card-title">
+                <a href="https://www.acunetix.com" target="_blank" rel="noopener">
+                  Acunetix — Invicti
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 16 16 8M9.5 8H16v6.5" /></svg>
+                </a>
+              </h3>
+              <p class="card-role">Senior frontend architect</p>
+              <p class="card-context">
+                Web vulnerability scanning, shipped both on-premise and as a cloud product.
+              </p>
+              <ul class="card-points">
+                <li>Designed a decoupled frontend architecture serving on-prem and cloud from one codebase.</li>
+                <li>Added localization and configurability so product variants didn't fork the UI.</li>
+                <li>Earlier: built the subscription, licensing and recurring payments platform, integrating ERP and PayPal.</li>
+              </ul>
+              <ul class="card-stack">
+                <li>Frontend architecture</li><li>Localization</li><li>Billing</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients -->
+      <section class="section section-clients" id="clients" aria-labelledby="clients-title">
+        <div class="wrap">
+          <p class="eyebrow">Clients</p>
+          <h2 class="section-title section-title-sm" id="clients-title">Teams I've worked with</h2>
+
+          <ul class="client-grid">
+            <li><a href="https://www.parloa.com" target="_blank" rel="noopener" title="Parloa"><img class="logo-wide" src="img/clients/parloa.svg" alt="Parloa" loading="lazy" width="222" height="56" /></a></li>
+            <li><a href="https://www.wayfair.com" target="_blank" rel="noopener" title="Wayfair"><img src="img/clients/wayfair.webp" alt="Wayfair" loading="lazy" width="82" height="82" /></a></li>
+            <li><a href="https://www.acunetix.com" target="_blank" rel="noopener" title="Acunetix"><img src="img/clients/acunetix.webp" alt="Acunetix" loading="lazy" width="83" height="84" /></a></li>
+            <li><a href="https://www.equalexperts.com" target="_blank" rel="noopener" title="Equal Experts"><img src="img/clients/equal-experts.webp" alt="Equal Experts" loading="lazy" width="58" height="51" /></a></li>
+            <li><a href="https://www.accesa.eu" target="_blank" rel="noopener" title="Accesa"><img src="img/clients/accesa.webp" alt="Accesa" loading="lazy" width="92" height="88" /></a></li>
+            <li><a href="https://essensys.ro" target="_blank" rel="noopener" title="Essensys"><img src="img/clients/essensys.webp" alt="Essensys" loading="lazy" width="96" height="76" /></a></li>
+            <li><a href="https://zenitech.co.uk" target="_blank" rel="noopener" title="Zenitech"><img class="logo-wide" src="img/clients/zenitech.webp" alt="Zenitech" loading="lazy" width="78" height="22" /></a></li>
+            <li><a href="https://mmc.ro" target="_blank" rel="noopener" title="M&amp;M Computers"><img class="logo-wide" src="img/clients/mmc.webp" alt="M&amp;M Computers" loading="lazy" width="419" height="66" /></a></li>
+            <li><span title="Ager Solutions"><img class="logo-wide" src="img/clients/ager-solutions.webp" alt="Ager Solutions" loading="lazy" width="136" height="60" /></span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap contact-inner">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title" id="contact-title">Selectively taking new engagements.</h2>
+          <p class="section-lede">
+            Remote contract work across the EU. If you have a platform to build, an architecture to
+            untangle, or a team that wants to work well with agents — write to me.
+          </p>
+
+          <a class="mail-link" href="mailto:contact@cristian-trifan.dev">contact@cristian-trifan.dev</a>
+
+          <div class="contact-links">
+            <a class="link-quiet" href="https://www.linkedin.com/in/crissdev" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="link-quiet" href="https://github.com/crissdev" target="_blank" rel="noopener">GitHub</a>
+            <a class="link-quiet" href="https://learn.frontend-mastery.community/" target="_blank" rel="noopener">Frontend Mastery</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© 2026 Cristian Trifan</p>
+        <p>Calpe, Spain</p>
       </div>
-    </div>
+    </footer>
 
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src='js/owl.carousel.min.js'></script>
-    <script src="js/main.js"></script>
+    <script src="js/site.js" defer></script>
 
-    <!-- Trusted site -->
+    <!-- Third-party: analytics, loaded async after the page has rendered. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SY0J7PPBHX"></script>
     <script>
-      if (location.hostname !== 'localhost') {
-        const s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://cdn.ywxi.net/js/1.js';
-        document.body.appendChild(s);
-      }
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-SY0J7PPBHX');
+    </script>
+
+    <!-- Third-party: trusted-site badge, deferred to idle so it never competes with render. -->
+    <script>
+      (function () {
+        if (location.hostname === 'localhost' || location.protocol === 'file:') return;
+        var load = function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://cdn.ywxi.net/js/1.js';
+          document.body.appendChild(s);
+        };
+        var schedule = function () {
+          if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 3000 });
+          else setTimeout(load, 1500);
+        };
+        if (document.readyState === 'complete') schedule();
+        else window.addEventListener('load', schedule, { once: true });
+      })();
     </script>
   </body>
 </html>
