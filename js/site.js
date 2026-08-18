@@ -1,51 +1,73 @@
 (function () {
   'use strict';
 
-  var root = document.documentElement;
+  const root = document.documentElement;
+
+  // We are running, so the head's blank-page failsafe is no longer needed.
+  clearTimeout(window.__revealFailsafe);
 
   /* --- Theme ------------------------------------------------------------- */
 
-  var toggle = document.getElementById('theme-toggle');
-  var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const toggle = document.getElementById('theme-toggle');
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+  const PALETTE = { light: '#f7f7f5', dark: '#0e1117' };
+  const metaLight = document.querySelector('meta[name="theme-color"][media*="light"]');
+  const metaDark = document.querySelector('meta[name="theme-color"][media*="dark"]');
 
   function currentTheme() {
     return root.dataset.theme || (systemDark.matches ? 'dark' : 'light');
   }
 
+  // Browsers pick the first theme-color whose media matches, so an appended
+  // override would lose. Point both metas at the chosen colour instead, and
+  // hand them back to the OS when there is no explicit choice.
+  function syncThemeColor() {
+    if (!metaLight || !metaDark) return;
+    const chosen = root.dataset.theme;
+    metaLight.setAttribute('content', chosen ? PALETTE[chosen] : PALETTE.light);
+    metaDark.setAttribute('content', chosen ? PALETTE[chosen] : PALETTE.dark);
+  }
+
   function syncLabel() {
     if (!toggle) return;
-    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    const next = currentTheme() === 'dark' ? 'light' : 'dark';
     toggle.setAttribute('aria-label', 'Switch to ' + next + ' theme');
+  }
+
+  function sync() {
+    syncLabel();
+    syncThemeColor();
   }
 
   if (toggle) {
     toggle.addEventListener('click', function () {
-      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
       root.dataset.theme = next;
       try { localStorage.setItem('theme', next); } catch (e) {}
-      syncLabel();
+      sync();
     });
-    syncLabel();
   }
 
+  sync();
+
   // Follow the OS while the visitor has not made an explicit choice.
-  var onSystemChange = function () {
-    if (!root.dataset.theme) syncLabel();
+  const onSystemChange = function () {
+    if (!root.dataset.theme) sync();
   };
   if (systemDark.addEventListener) systemDark.addEventListener('change', onSystemChange);
   else if (systemDark.addListener) systemDark.addListener(onSystemChange);
 
   /* --- Reveal on scroll -------------------------------------------------- */
 
-  var items = document.querySelectorAll('.reveal');
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll('.reveal');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!('IntersectionObserver' in window) || reduced) {
-    for (var i = 0; i < items.length; i++) items[i].classList.add('is-visible');
+    items.forEach(function (item) { item.classList.add('is-visible'); });
     return;
   }
 
-  var observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;

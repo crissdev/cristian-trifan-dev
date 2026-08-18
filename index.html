@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Cristian Trifan — Full-stack engineer, agentic workflows</title>
-    <meta name="description" content="Cristian Trifan is a senior full-stack engineer with two decades of production experience in TypeScript, React, Next.js and Node.js, building daily with agentic workflows. Remote contract work across the EU." />
+    <meta name="description" content="Senior full-stack engineer: TypeScript, React, Next.js, Node.js. Two decades of production software, built with agents in the loop. Remote EU contracts." />
     <meta name="author" content="Cristian Trifan" />
     <link rel="canonical" href="https://cristian-trifan.dev/" />
     <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)" />
@@ -15,25 +15,40 @@
     <meta property="og:title" content="Cristian Trifan — Full-stack engineer, agentic workflows" />
     <meta property="og:description" content="Two decades of production software. TypeScript, React, Next.js, Node.js — built daily with agents in the loop." />
     <meta property="og:url" content="https://cristian-trifan.dev/" />
-    <meta property="og:image" content="https://cristian-trifan.dev/img/me-ai-1400.jpg" />
+    <meta property="og:site_name" content="Cristian Trifan" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="https://cristian-trifan.dev/img/og-card.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Cristian Trifan — full-stack engineering, with agents in the loop." />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://cristian-trifan.dev/img/og-card.jpg" />
+    <meta name="twitter:image:alt" content="Cristian Trifan — full-stack engineering, with agents in the loop." />
 
-    <link rel="icon" type="image/jpeg" href="favicon.jpeg" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="preload" as="image" href="img/me-ai-1400.webp" imagesrcset="img/me-ai-800.webp 800w, img/me-ai-1400.webp 1400w" imagesizes="(max-width: 900px) 92vw, 46vw" />
     <link rel="preload" as="font" type="font/woff2" href="css/fonts/instrument-sans-400-700-latin.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="css/fonts/ibm-plex-mono-400-latin.woff2" crossorigin />
     <link rel="stylesheet" href="css/site.css" />
 
     <script>
-      // Runs before first paint: no flash of the wrong palette, and .reveal only
-      // hides itself when JS is actually available to reveal it again.
+      // Runs before first paint so there is no flash of the wrong palette.
       (function () {
-        var root = document.documentElement;
+        const root = document.documentElement;
         root.classList.add('js');
         try {
-          var saved = localStorage.getItem('theme');
+          const saved = localStorage.getItem('theme');
           if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
         } catch (e) {}
+        // The `js` class is what hides .reveal blocks until site.js animates
+        // them in. Enabling JS is not the same as site.js actually running, so
+        // drop the class if it never checks in — a blocked or missing script
+        // must not leave the page blank.
+        window.__revealFailsafe = setTimeout(function () {
+          root.classList.remove('js');
+        }, 2000);
       })();
     </script>
 
@@ -45,6 +60,7 @@
         "url": "https://cristian-trifan.dev/",
         "image": "https://cristian-trifan.dev/img/me-ai-1400.jpg",
         "jobTitle": "Senior Full-Stack Engineer",
+        "description": "Senior full-stack engineer with two decades of production experience, building daily with agentic workflows.",
         "email": "mailto:contact@cristian-trifan.dev",
         "address": { "@type": "PostalAddress", "addressLocality": "Calpe", "addressCountry": "ES" },
         "sameAs": [
@@ -369,13 +385,13 @@
     <script>
       (function () {
         if (location.hostname === 'localhost' || location.protocol === 'file:') return;
-        var load = function () {
-          var s = document.createElement('script');
+        const load = function () {
+          const s = document.createElement('script');
           s.async = true;
           s.src = 'https://cdn.ywxi.net/js/1.js';
           document.body.appendChild(s);
         };
-        var schedule = function () {
+        const schedule = function () {
           if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 3000 });
           else setTimeout(load, 1500);
         };

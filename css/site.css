@@ -243,6 +243,8 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
+  background: var(--paper); /* fallback: color-mix would otherwise drop the
+                              whole declaration and leave the bar see-through */
   background: color-mix(in srgb, var(--paper) 84%, transparent);
   border-bottom: 1px solid var(--rule);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
@@ -399,6 +401,9 @@ body {
   text-decoration: none;
   border-bottom: 1px solid var(--signal);
   padding-bottom: 1px;
+  /* Keep the product name whole so the underline never splits across lines.
+     Verified from 320px up: it always fits inside the lede column. */
+  white-space: nowrap;
   transition: color 0.16s ease;
 }
 
@@ -736,6 +741,7 @@ body {
   display: grid;
   gap: 9px;
   margin-top: 18px;
+  margin-bottom: 22px;
   max-width: 62ch;
   font-size: 0.94rem;
 }
