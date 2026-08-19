@@ -219,7 +219,7 @@ body {
 .section-title {
   font-size: var(--fs-h2);
   font-weight: 700;
-  line-height: 1.14;
+  line-height: 1.2;
   letter-spacing: -0.022em;
   max-width: 21ch;
   text-wrap: balance;
