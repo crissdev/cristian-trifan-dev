@@ -84,6 +84,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* --- Tokens --------------------------------------------------------------- */
 
 :root {
+  /* Native UI — scrollbars, form controls, the canvas behind the page — follows
+     the theme that is actually applied, including a manual override. A bare
+     `color-scheme: light dark` would track the OS only and desync from the toggle. */
+  color-scheme: light;
+
   /* Light palette — cool neutral paper, ink with a blue cast, drawn from the
      photograph's UI lines so the image belongs to the page rather than sitting on it. */
   --paper:        #f7f7f5;
@@ -118,6 +123,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --paper:        #0e1117;
     --surface:      #161a22;
     --surface-sunk: #12161d;
@@ -136,6 +142,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --paper:        #0e1117;
   --surface:      #161a22;
   --surface-sunk: #12161d;
